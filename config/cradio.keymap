@@ -1,196 +1,131 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <behaviors.dtsi>
 
-#define COLEMAK 0
-#define NAV 1
-#define NUM 2
+#define xxx &none
+#define ___ &trans
+
+// layer definitions
+#define QWR 0
+#define CLM 1
+#define NAV 2
 #define SYM 3
 #define FUN 4
 
-/* krita base */
-#define KRB 5
+#define STICKY_KEY_TIMEOUT 60000
 
-/* play */
-#define PLAY 6
+// see &nk behavior below
+#define SK(KEY) &nk KEY KEY
 
+// custom keycodes
+#define MEH        LS(LA(LCTRL))
+#define D_LT       LC(LA(P))
+#define D_RT       LC(LA(N))
+#define TAB_RT     LC(TAB)
+#define TAB_LT     LC(LS(TAB))
+#define BSPCWRD    LA(LC(BSPC))
+#define UNDO_MAC   LG(Z)
+#define REDO_MAC   LG(LS(Z))
 
-&mt {
-  flavor = "tap-preferred";
-  tapping_term_ms = <200>;
-  quick_tap_ms = <75>;
+// shortcut for mods
+#define AML(k1,k2,k3,k4) &am LCTRL k1  &am LSHIFT k2  &am LALT k3    &am LCMD k4
+#define AMR(k1,k2,k3,k4) &am LCMD k1   &am LALT k2    &am LSHIFT k3  &am LCTRL k4
+
+&sk {
+  release-after-ms = <STICKY_KEY_TIMEOUT>;
 };
 
+&caps_word {
+  continue-list = <UNDERSCORE MINUS BACKSPACE>;
+};
+
+&kscan0 {
+  debounce-period = <14>;
+};
 
 / {
+  combos {
+  };
 
-    combos {
-        compatible = "zmk,combos";
-        combo_caps_word {
-            timeout-ms = <100>;
-            key-positions = <20 29>;
-            bindings = <&caps_word>;
-        };
-        combo_esc {
-            timeout-ms = <150>;
-            key-positions = <12 13 16 17>;
-            bindings = <&kp ESC>;
-        };
+  behaviors {
+  };
 
-        // (
-        combo_lpar {
-            timeout-ms = <150>;
-            key-positions = <4 14>;
-            bindings = <&kp LPAR>;
-        };
+keymap {
+    compatible = "zmk,keymap";
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+//                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
 
-        // )
-        combo_rpar {
-            timeout-ms = <150>;
-            key-positions = <5 15>;
-            bindings = <&kp RPAR>;
-        };
-
-        // {
-        combo_lcurly {
-            timeout-ms = <150>;
-            key-positions = <3 13>;
-            bindings = <&kp LBRC>;
-        };
-        // }
-        combo_rcurly {
-            timeout-ms = <150>;
-            key-positions = <6 16>;
-            bindings = <&kp RBRC>;
-        };
-
-        // [
-        combo_lsquare {
-            timeout-ms = <150>;
-            key-positions = <13 23>;
-            bindings = <&kp LBKT>;
-        };
-
-        // ]
-        combo_rsquare {
-            timeout-ms = <150>;
-            key-positions = <16 26>;
-            bindings = <&kp RBKT>;
-        };
-
-        // <
-        combo_less_than {
-            timeout-ms = <150>;
-            key-positions = <14 24>;
-            bindings = <&kp LT>;
-        };
-
-        // >
-        combo_greater_than {
-            timeout-ms = <150>;
-            key-positions = <15 25>;
-            bindings = <&kp GT>;
-        };
-
-        combo_minus {
-            timeout-ms = <150>;
-            key-positions = <2 3 6 7>;
-            bindings = <&kp MINUS>;
-        };
-        combo_under {
-            timeout-ms = <150>;
-            key-positions = <22 23 26 27>;
-            bindings = <&kp UNDER>;
-        };
-        combo_ble {
-            timeout-ms = <20>;
-            key-positions = <0 1>;
-            bindings = <&out OUT_BLE>;
-        };
-        combo_krita {
-            timeout-ms = <100>;
-            key-positions = <0 10 20>;
-            bindings = <&tog KRB>;
-        };
-        combo_draw {
-            timeout-ms = <100>;
-            key-positions = <9 19 29>;
-            bindings = <&tog PLAY>;
-        };
+    qwerty_layer {
+      label = "QWR";
+      bindings = <
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P
+    &kp A         &kp S         &kp D         &kp F         &kp G             &kp H         &kp J         &kp K         &kp L         &kp SQT
+    AML(Z        ,    X        ,    C        ,    V)        &kp B             &kp N         AMR(M        ,    COMMA    ,    DOT      ,    FSLH)
+// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                              &mo NAV       &spctab           &kp RSHFT     &mo SYM
+//                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+      >;
     };
 
-    keymap {
-        compatible = "zmk,keymap";
-        default_layer {
-            bindings = <
-                  &kp Q      &kp W       &kp E        &kp R         &kp T                  &kp Y              &kp U           &kp I        &kp O        &kp P
-                  &kp A      &kp S       &lt FUN D    &lt NAV F     &kp G                  &kp H              &lt SYM J       &lt NUM K    &kp L        &kp SCLN
-                  &kp Z      &kp X       &kp C        &kp V         &kp B                  &kp N              &kp M           &kp CMMA     &kp DOT      &kp FSLH
-                                                      &mt LALT TAB  &mt LGUI SPC           &mt LSHIFT RET     &mt LCTRL BSPC
-                >;
-        };
-
-        nav_layer {
-            bindings = <
-                &bt BT_CLR   &trans &trans &bootloader &sys_reset           &trans      &kp LBRC   &kp RBRC &kp LPAR    &kp RPAR
-                &bt BT_SEL 0 &trans &trans &trans      &trans               &kp LEFT    &kp DOWN   &kp UP   &kp RIGHT   &trans
-                &bt BT_SEL 1 &trans &trans &trans      &trans               &trans      &kp LBKT   &kp RBKT &trans      &trans
-                                           &trans      &trans               &trans      &kp BSPC
-                >;
-        };
-
-        num_layer {
-            bindings = <
-                &trans     &kp F7 &kp F8 &kp F9 &trans                &trans    &trans   &trans &trans    &trans
-                &kp SQT    &kp F4 &kp F5 &kp F6 &kp EQUAL             &trans    &trans   &trans &trans    &trans
-                &kp GRAVE  &kp F1 &kp F2 &kp F3 &kp BSLH              &trans    &trans   &trans &trans    &trans
-                                         &trans &trans                &trans    &trans
-                >;
-       };
-
-       sym_layer {
-            bindings = <
-                &kp LS(Q) &kp LS(Z) &kp STAR  &kp AMPS  &trans                &sys_reset &bootloader   &trans &trans    &trans
-                &kp DQT   &kp CARET &kp PRCNT &kp DLLR  &kp KP_PLUS           &trans     &trans        &trans &trans    &trans
-                &kp TILDE &kp HASH  &kp AT    &kp EXCL  &kp PIPE              &trans     &trans        &trans &trans    &trans
-                                              &kp LPAR  &kp RPAR              &trans     &trans
-                >;
-        };
-
-       fun_layer {
-            bindings = <
-                &trans &trans &trans &trans &trans        &trans   &kp N7    &kp N8    &kp N9    &trans
-                &trans &trans &trans &trans &trans        &kp BSPC &kp N4    &kp N5    &kp N6    &trans
-                &trans &trans &trans &trans &trans        &trans   &kp N1    &kp N2    &kp N3    &trans
-                                     &trans &trans        &trans   &kp N0
-                >;
-        };
-
-        krita_base_layer {
-            bindings = <
-                &kp M      &trans &kp BSLH  &kp LBKT      &kp RBKT       &trans    &trans   &trans &trans    &trans
-                &trans     &trans &kp F     &kp I         &kp O          &trans    &trans   &trans &trans    &trans
-                &kp LC(S)  &trans &kp P     &kp K         &kp L          &trans    &trans   &trans &trans    &trans
-                                            &kp LS(LC(Z)) &kp LC(Z)      &trans    &trans
-                >;
-       };
-
-        draw {
-            bindings = <
-                &kp Q   &kp W  &kp E     &kp R         &kp T          &kp Y     &kp U         &kp I          &kp O      &kp P
-                &kp N1  &kp S  &kp N3    &mt LCTRL F   &kp G          &kp H     &mt LCTRL J   &mt RSHIFT K   &mt LALT L &mt LGUI SCLN
-                &kp Z   &kp X  &kp C     &kp V         &kp B          &kp M     &kp LEFT      &kp DOWN       &kp RIGHT  &trans
-                                         &kp R         &kp U          &kp RET   &kp BSPC
-                >;
-       };
+    colemak_layer {
+      label = "CLM";
+      bindings = <
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &kp SQT
+    &kp A         &kp R         &kp S         &kp T         &kp G             &kp M         &kp N         &kp E         &kp I         &kp O
+    &am LCTRL Z    &am LALT X    &am LSHFT C   &am LCMD D    &kp V             &kp K         &am RCMD H    &am RSHFT COMMA  &am RALT DOT  &am RCTRL FSLH
+// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                              &mo NAV       &spctab           &kp RSHFT     &mo SYM
+//                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+      >;
     };
+
+    nav_layer {
+      label = "NAV";
+      bindings = <
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    &kp N1        &kp N2        &kp N3        &kp N4        &kp N0            &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       xxx
+    &kp ESC       &kp D_LT      &kp LG(TAB)   &kp D_RT      &kp TAB           &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp BSPC
+    SK(LCTRL)      SK(LSHFT)     SK(LALT)      SK(LCMD)      &key_repeat       xxx           &kp RET       &kp INS       xxx           &kp DEL
+// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                              ___           &mo FUN           ___           ___
+//                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+      >;
+    };
+
+    symbol_layer {
+      label = "SYM";
+      bindings = <
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT         &kp PLUS      &kp N7        &kp N8        &kp N9        &kp EQUAL
+    &kp GRAVE     &kp TILDE     &kp SEMI      &kp COLON     &kp CARET         &kp MINUS     &kp N4        &kp N5        &kp N6        &kp N0
+    SK(LCTRL)      SK(LSHFT)     SK(LALT)      SK(LCMD)      &kp AMPS          &kp STAR      &kp N1        &kp N2        &kp N3        &kp FSLH
+// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                              ___           ___               ___           ___
+//                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+      >;
+    };
+
+
+    function_layer {
+      label = "FUN";
+      bindings = <
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    xxx           &kp C_VOL_DN  &kp C_MUTE    &kp C_VOL_UP  &kp C_BRI_UP      &kp F12       &kp F7        &kp F8        &kp F9        xxx
+    xxx           &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_BRI_DN      &kp F11       &kp F4        &kp F5        &kp F6        &to CLM
+    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &out OUT_TOG  &bt BT_CLR        &kp F10       &kp F1        &kp F2        &kp F3        &to QWR
+// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                              ___           ___               ___           ___
+//                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+      >;
+    };
+
+  };
 };
+
+// vim:ft=c
