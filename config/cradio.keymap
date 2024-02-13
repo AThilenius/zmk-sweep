@@ -8,9 +8,9 @@
 
 // layer definitions
 #define QWR 0
-#define NAV 1
-#define NUM 2
-#define SYM 3
+#define SYM 1
+#define NAV 2
+#define NUM 3
 #define FUN 4
 
 #define STICKY_KEY_TIMEOUT 60000
