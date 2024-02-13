@@ -62,7 +62,7 @@ keymap {
     &am LMETA A   &am LALT S    &am LCTRL D   &am LSHIFT F  &am MEH G         &am MEH H     &am LSHIFT J  &am LCTRL K   &am LALT L    &am LMETA SQT
     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M        &kp COMMA      &kp DOT       &kp FSLH
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                              &lt NAV BSPC  &lt NUM TAB       &kp RET       &lt SYM SPACE
+                                              &lt NAV BSPC  &lt NUM TAB       &kp SPACE     &lt SYM RET
 //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
