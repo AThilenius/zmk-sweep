@@ -58,7 +58,7 @@
 
         SYMBOLS {
             bindings = <
-&kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT      &kp EQUAL     &kp GRAVE              &kp COLON        &kp SEMI  &kp PLUS
+&kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT      &kp EQUAL     &kp GRAVE              &kp COLON        &kp SQT   &kp PLUS
 &kp LMETA        &kp LSHIFT   &kp LALT  &kp LCTRL   &kp CARET        &kp ASTERISK  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LBKT  &kp MINUS
 &trans           &trans       &kp BSLH  &kp PIPE    &kp AMPERSAND    &kp TILDE     &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RBKT  &kp UNDERSCORE
                                         &trans      &trans           &trans        &trans
