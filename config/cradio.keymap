@@ -100,6 +100,24 @@
                               &trans    &kp LSHIFT    &trans   &trans
             >;
         };
+
+        LEFT-MOD {
+            bindings = <
+&kp N1     &kp N2     &kp N3        &kp N4    &kp N5             &trans  &trans  &trans  &trans  &trans
+&kp ESC    &kp LPAR   &kp RPAR      &kp TAB   &kp GRAVE          &trans  &trans  &trans  &trans  &trans
+&kp LSHFT  &kp LCTRL  &kp LG(LGUI)  &kp LALT  &kp EXCLAMATION    &trans  &trans  &trans  &trans  &trans
+                                    &trans    &trans             &trans  &trans
+            >;
+        };
+
+        RIGHT-MOD {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans    &trans  &trans
+            >;
+        };
     };
 };
 
