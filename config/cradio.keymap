@@ -49,36 +49,6 @@
         };
     };
 
-    macros {
-        mod1: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LMETA>;
-            label = "NEW_MACRO";
-        };
-
-        mod2: mod2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LALT>;
-            label = "MOD2";
-        };
-
-        mod3: mod3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LSHIFT>;
-            label = "MOD3";
-        };
-
-        mod4: mod4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL>;
-            label = "MOD4";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -93,46 +63,46 @@
 
         LEFT_MOD {
             bindings = <
-&kp GT  &kp RBKT  &kp RBRC  &kp RPAR  &none        &trans  &trans  &trans  &trans  &trans
-&kp LT  &kp LBKT  &kp LBRC  &kp LPAR  &none        &trans  &trans  &trans  &trans  &trans
-&mod1   &mod2     &mod3     &mod4     &kp ENTER    &trans  &trans  &trans  &trans  &trans
-                            &trans    &trans       &trans  &trans
+&kp GT    &kp RBKT   &kp RBRC    &kp RPAR   &none        &trans  &trans  &trans  &trans  &trans
+&kp LT    &kp LBKT   &kp LBRC    &kp LPAR   &kp ESC      &trans  &trans  &trans  &trans  &trans
+&kp LALT  &kp LMETA  &kp LSHIFT  &kp LCTRL  &kp ENTER    &trans  &trans  &trans  &trans  &trans
+                                 &trans     &trans       &trans  &trans
             >;
         };
 
         RIGHT_MOD {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &kp GRAVE  &kp BSLH  &trans     &kp SQT  &kp PIPE
-&trans  &trans  &trans  &trans  &trans    &trans     &kp EXCL  &kp QMARK  &kp DQT  &kp COLON
-&trans  &trans  &trans  &trans  &trans    &kp ENTER  &mod4     &mod3      &mod2    &mod1
+&trans  &trans  &trans  &trans  &trans    &kp GRAVE  &kp BSLH   &trans      &kp SQT    &kp PIPE
+&trans  &trans  &trans  &trans  &trans    &kp ESC    &kp EXCL   &kp QMARK   &kp DQT    &kp COLON
+&trans  &trans  &trans  &trans  &trans    &kp ENTER  &kp LCTRL  &kp LSHIFT  &kp LMETA  &kp LALT
                         &trans  &trans    &trans     &trans
             >;
         };
 
         NUM_SYM {
             bindings = <
-&kp AT  &kp HASH   &kp DLLR  &kp PRCNT  &kp CARET         &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR
-&trans  &kp TILDE  &kp FSLH  &kp EQUAL  &kp UNDERSCORE    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp N0
-&mod1   &mod2      &mod3     &mod4      &kp ENTER         &kp ENTER  &kp N1  &kp N2  &kp N3  &trans
-                             &trans     &trans            &trans     &trans
+&kp AT    &kp HASH   &kp DLLR    &kp PRCNT  &kp CARET         &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR
+&trans    &kp TILDE  &kp FSLH    &kp EQUAL  &kp UNDERSCORE    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp N0
+&kp LALT  &kp LMETA  &kp LSHIFT  &kp LCTRL  &kp ENTER         &kp ENTER  &kp N1  &kp N2  &kp N3  &trans
+                                 &trans     &trans            &trans     &trans
             >;
         };
 
         FUNC {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &kp F10  &kp F7  &kp F8  &kp F9  &trans
-&trans  &trans  &trans  &trans  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &trans
-&mod1   &mod2   &mod3   &mod4   &trans    &kp F12  &kp F1  &kp F2  &kp F3  &trans
-                        &trans  &trans    &trans   &trans
+&trans    &trans     &trans      &trans     &trans    &kp F10  &kp F7  &kp F8  &kp F9  &trans
+&trans    &trans     &trans      &trans     &trans    &kp F11  &kp F4  &kp F5  &kp F6  &trans
+&kp LALT  &kp LMETA  &kp LSHIFT  &kp LCTRL  &trans    &kp F12  &kp F1  &kp F2  &kp F3  &trans
+                                 &trans     &trans    &trans   &trans
             >;
         };
 
         NAV {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &kp HOME  &kp PG_UP  &kp PG_DN  &kp END    &trans
-&trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
-&mod1   &mod2   &mod3   &mod4   &trans    &trans    &trans     &trans     &trans     &trans
-                        &trans  &trans    &trans    &trans
+&trans    &trans     &trans      &trans     &trans    &kp HOME  &kp PG_UP  &kp PG_DN  &kp END    &trans
+&trans    &trans     &trans      &trans     &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&kp LALT  &kp LMETA  &kp LSHIFT  &kp LCTRL  &trans    &trans    &trans     &trans     &trans     &trans
+                                 &trans     &trans    &trans    &trans
             >;
         };
     };
