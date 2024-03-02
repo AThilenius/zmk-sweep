@@ -33,14 +33,49 @@
     combos {
         compatible = "zmk,combos";
 
-        NUM_COMBO {
+        FUNC_COMBO {
             bindings = <&mo 4>;
-            key-positions = <30 32>;
+            key-positions = <30 33>;
         };
 
-        FUNCATION_COMBO {
+        NAV_COMBO_1 {
             bindings = <&mo 5>;
-            key-positions = <30 33>;
+            key-positions = <33 32>;
+        };
+
+        NAV_COMBO_2 {
+            bindings = <&mo 5>;
+            key-positions = <30 32>;
+        };
+    };
+
+    macros {
+        mod1: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LMETA>;
+            label = "NEW_MACRO";
+        };
+
+        mod2: mod2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>;
+            label = "MOD2";
+        };
+
+        mod3: mod3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT>;
+            label = "MOD3";
+        };
+
+        mod4: mod4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>;
+            label = "MOD4";
         };
     };
 
@@ -49,73 +84,55 @@
 
         QWERTY {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I  &kp O      &kp P
-&kp A  &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K  &kp L      &kp SEMICOLON
-&mo 1  &kp Z  &kp X  &kp C  &kp V       &kp B      &kp N  &kp M  &kp COMMA  &kp DOT
-                     &mo 3  &shft_cq    &kp SPACE  &mo 2
-            >;
-        };
-
-        QWERTY-MOD {
-            bindings = <
-&kp Q   &kp W        &kp E        &kp R       &kp T       &kp Y      &kp U       &kp I        &kp O        &kp P
-&kp A   &am LCTRL S  &am LMETA D  &am LALT F  &kp G       &kp H      &am LALT J  &am LMETA K  &am LCTRL L  &kp SEMI
-&trans  &kp Z        &kp X        &kp C       &kp V       &kp B      &kp N       &kp M        &kp COMMA    &kp DOT
-                                  &mo 3       &shft_cq    &kp SPACE  &mo 2
-            >;
-        };
-
-        SYMBOLS {
-            bindings = <
-&kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp DOLLAR  &kp PERCENT      &kp EQUAL     &kp GRAVE              &kp COLON        &kp SQT   &kp PLUS
-&trans           &kp LCTRL    &kp LMETA  &kp LALT    &kp CARET        &kp ASTERISK  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LBKT  &kp MINUS
-&trans           &trans       &kp BSLH   &kp PIPE    &kp AMPERSAND    &kp TILDE     &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RBKT  &kp UNDERSCORE
-                                         &trans      &kp LSHIFT       &trans        &trans
-            >;
-        };
-
-        NAV {
-            bindings = <
-&kp ESC    &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
-&trans     &kp LCTRL   &kp LMETA   &kp LALT    &trans        &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp DEL
-&kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp LC(V)   &trans        &trans    &kp BSPC   &kp TAB    &trans     &trans
-                                   &trans      &kp LSHIFT    &kp RET   &trans
-            >;
-        };
-
-        NUM {
-            bindings = <
-&trans  &trans     &trans     &trans    &trans        &kp PLUS   &kp N7  &kp N8  &kp N9  &kp ASTERISK
-&trans  &kp LCTRL  &kp LMETA  &kp LALT  &trans        &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH
-&trans  &trans     &trans     &trans    &trans        &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT
-                              &trans    &kp LSHIFT    &trans     &trans
-            >;
-        };
-
-        FUN {
-            bindings = <
-&trans  &trans     &trans     &trans    &trans        &kp F12  &kp F7  &kp F8  &kp F9  &trans
-&trans  &kp LCTRL  &kp LMETA  &kp LALT  &trans        &kp F11  &kp F4  &kp F5  &kp F6  &trans
-&trans  &trans     &trans     &trans    &trans        &kp F10  &kp F1  &kp F2  &kp F3  &trans
-                              &trans    &kp LSHIFT    &trans   &trans
+&kp Q  &kp W  &kp E  &kp R     &kp T              &kp Y        &kp U      &kp I  &kp O      &kp P
+&kp A  &kp S  &kp D  &kp F     &kp G              &kp H        &kp J      &kp K  &kp L      &kp SEMICOLON
+&none  &kp Z  &kp X  &kp C     &kp V              &kp B        &kp N      &kp M  &kp COMMA  &kp DOT
+                     &shft_cq  &lt 1 BACKSPACE    &lt 2 SPACE  &lt 3 TAB
             >;
         };
 
         LEFT-MOD {
             bindings = <
-&kp N1     &kp N2     &kp N3        &kp N4    &kp N5             &trans  &trans  &trans  &trans  &trans
-&kp ESC    &kp LPAR   &kp RPAR      &kp TAB   &kp GRAVE          &trans  &trans  &trans  &trans  &trans
-&kp LSHFT  &kp LCTRL  &kp LG(LGUI)  &kp LALT  &kp EXCLAMATION    &trans  &trans  &trans  &trans  &trans
-                                    &trans    &trans             &trans  &trans
+&kp GT  &kp RBKT  &kp RBRC  &kp RPAR  &none        &trans  &trans  &trans  &trans  &trans
+&kp LT  &kp LBKT  &kp LBRC  &kp LPAR  &none        &trans  &trans  &trans  &trans  &trans
+&mod1   &mod2     &mod3     &mod4     &kp ENTER    &trans  &trans  &trans  &trans  &trans
+                            &trans    &trans       &trans  &trans
             >;
         };
 
         RIGHT-MOD {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &kp GRAVE  &kp BSLH  &trans     &kp SQT  &kp PIPE
+&trans  &trans  &trans  &trans  &trans    &trans     &kp EXCL  &kp QMARK  &kp DQT  &kp COLON
+&trans  &trans  &trans  &trans  &trans    &kp ENTER  &mod4     &mod3      &mod2    &mod1
+                        &trans  &trans    &trans     &trans
+            >;
+        };
+
+        NUM_SYM {
+            bindings = <
+&kp AT  &kp HASH   &kp DLLR  &kp PRCNT  &kp CARET         &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR
+&trans  &kp TILDE  &kp FSLH  &kp EQUAL  &kp UNDERSCORE    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp N0
+&mod1   &mod2      &mod3     &mod4      &trans            &kp ENTER  &kp N1  &kp N2  &kp N3  &trans
+                             &trans     &trans            &trans     &trans
+            >;
+        };
+
+        FUNC {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &kp F10  &kp F7  &kp F8  &kp F9  &trans
+&trans  &trans  &trans  &trans  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &trans
+&mod1   &mod2   &mod3   &mod4   &trans    &kp F12  &kp F1  &kp F2  &kp F3  &trans
+                        &trans  &trans    &trans   &trans
+            >;
+        };
+
+        NAV {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &kp HOME  &kp PG_UP  &kp PG_DN  &kp END    &trans
+&trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&mod1   &mod2   &mod3   &mod4   &trans    &trans    &trans     &trans     &trans     &trans
+                        &trans  &trans    &trans    &trans
             >;
         };
     };
