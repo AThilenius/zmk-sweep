@@ -91,7 +91,7 @@
             >;
         };
 
-        LEFT-MOD {
+        LEFT_MOD {
             bindings = <
 &kp GT  &kp RBKT  &kp RBRC  &kp RPAR  &none        &trans  &trans  &trans  &trans  &trans
 &kp LT  &kp LBKT  &kp LBRC  &kp LPAR  &none        &trans  &trans  &trans  &trans  &trans
@@ -100,7 +100,7 @@
             >;
         };
 
-        RIGHT-MOD {
+        RIGHT_MOD {
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &kp GRAVE  &kp BSLH  &trans     &kp SQT  &kp PIPE
 &trans  &trans  &trans  &trans  &trans    &trans     &kp EXCL  &kp QMARK  &kp DQT  &kp COLON
