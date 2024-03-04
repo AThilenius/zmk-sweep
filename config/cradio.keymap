@@ -23,9 +23,14 @@
     combos {
         compatible = "zmk,combos";
 
-        NUM_FUN_COMBO {
+        NUM_COMBO {
             bindings = <&mo 0>;
             key-positions = <30 33>;
+        };
+
+        FUNC_COMBO {
+            bindings = <&mo 4>;
+            key-positions = <30 33 14>;
         };
     };
 
@@ -52,19 +57,28 @@
 
         NAV {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans    &trans  &trans
+&kp LG(F)  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)       &kp HOME      &kp PG_DN  &kp PG_UP  &kp END    &kp DEL
+&kp LSHFT  &kp LGUI    &kp LALT    &kp LCTRL   &kp RET          &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT  &kp ENTER
+&trans     &trans      &kp LC(C)   &kp LC(V)   &kp BACKSPACE    &kp LC(BSPC)  &none      &none      &trans     &trans
+                                   &trans      &trans           &kp TAB       &trans
             >;
         };
 
-        NUM_FUN {
+        NUM {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans    &trans  &trans
+&trans     &trans    &trans    &trans     &trans    &trans  &kp N7  &kp N8  &kp N9  &trans
+&kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp N0
+&trans     &trans    &trans    &trans     &trans    &trans  &kp N1  &kp N2  &kp N3  &trans
+                               &trans     &trans    &trans  &trans
+            >;
+        };
+
+        FUNC {
+            bindings = <
+&trans     &trans    &trans    &trans     &trans    &kp F10  &kp F7  &kp F8  &kp F9  &trans
+&kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &trans
+&trans     &trans    &trans    &trans     &trans    &kp F12  &kp F1  &kp F2  &kp F3  &trans
+                               &trans     &trans    &trans   &trans
             >;
         };
     };
