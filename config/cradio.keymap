@@ -32,6 +32,11 @@
             bindings = <&mo 4>;
             key-positions = <30 33 14>;
         };
+
+        NUM_ALT_COMBO {
+            bindings = <&mo 3>;
+            key-positions = <32 33>;
+        };
     };
 
     keymap {
@@ -57,10 +62,10 @@
 
         NAV {
             bindings = <
-&kp LG(F)  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)       &kp HOME      &kp PG_DN  &kp PG_UP  &kp END    &kp DEL
-&kp LSHFT  &kp LGUI    &kp LALT    &kp LCTRL   &kp RET          &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT  &kp ENTER
-&trans     &trans      &kp LC(C)   &kp LC(V)   &kp BACKSPACE    &kp LC(BSPC)  &none      &none      &trans     &trans
-                                   &trans      &trans           &kp TAB       &trans
+&kp LG(F)  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp DEL
+&kp LSHFT  &kp LGUI    &kp LALT    &kp LCTRL   &none         &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp BACKSPACE
+&trans     &trans      &kp LC(C)   &kp LC(V)   &none         &none     &none      &none      &trans     &kp ENTER
+                                   &trans      &trans        &kp TAB   &trans
             >;
         };
 
