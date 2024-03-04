@@ -23,19 +23,9 @@
     combos {
         compatible = "zmk,combos";
 
-        FUNC_COMBO {
+        NUM_FUN_COMBO {
             bindings = <&mo 0>;
             key-positions = <30 33>;
-        };
-
-        NAV_COMBO_1 {
-            bindings = <&mo 0>;
-            key-positions = <33 32>;
-        };
-
-        NAV_COMBO_2 {
-            bindings = <&mo 0>;
-            key-positions = <30 32>;
         };
     };
 
@@ -44,18 +34,36 @@
 
         QWERTY {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T         &kp Y      &kp U  &kp I  &kp O      &kp P
-&kp A  &kp S  &kp D  &kp F  &kp G         &kp H      &kp J  &kp K  &kp L      &kp SEMICOLON
-&none  &kp Z  &kp X  &kp C  &kp V         &kp B      &kp N  &kp M  &kp COMMA  &kp DOT
-                     &none  &kp LSHIFT    &kp SPACE  &mo 1
+&kp Q     &kp W  &kp E  &kp R  &kp T         &kp Y      &kp U  &kp I  &kp O      &kp P
+&kp A     &kp S  &kp D  &kp F  &kp G         &kp H      &kp J  &kp K  &kp L      &kp SEMICOLON
+&kp FSLH  &kp Z  &kp X  &kp C  &kp V         &kp B      &kp N  &kp M  &kp COMMA  &kp DOT
+                        &mo 2  &kp LSHIFT    &kp SPACE  &mo 1
             >;
         };
 
         SYM {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT
-&trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
+&kp ESC    &kp LBKT  &kp LBRC   &kp LPAR   &kp TILDE    &kp CARET  &kp RPAR   &kp RBRC  &kp RBKT   &kp GRAVE
+&kp MINUS  &kp DQT   &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH   &sk LCTRL  &sk LALT  &sk LGUI   &sk LSHFT
+&kp PLUS   &kp SQT   &kp AT     &kp PIPE   &kp PRCNT    &none      &kp BSLH   &kp AMPS  &kp QMARK  &kp EXCL
+                                &trans     &trans       &trans     &trans
+            >;
+        };
+
+        NAV {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans    &trans  &trans
+            >;
+        };
+
+        NUM_FUN {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
                         &trans  &trans    &trans  &trans
             >;
         };
