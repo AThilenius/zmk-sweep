@@ -53,10 +53,10 @@
 
         SYM {
             bindings = <
-&kp ESC    &kp LBKT  &kp LBRC   &kp LPAR   &kp TILDE    &kp CARET  &kp RPAR   &kp RBRC  &kp RBKT   &kp GRAVE
-&kp MINUS  &kp DQT   &kp EQUAL  &kp UNDER  &kp DLLR     &kp ENTER  &sk LCTRL  &sk LALT  &sk LGUI   &sk LSHFT
-&kp PLUS   &kp SQT   &kp AT     &kp PIPE   &kp PRCNT    &kp HASH   &kp BSLH   &kp AMPS  &kp QMARK  &kp EXCL
-                                &trans     &trans       &trans     &trans
+&kp ASTRK  &kp LBKT  &kp LBRC   &kp LPAR   &kp TILDE    &kp CARET      &kp RPAR   &kp RBRC  &kp RBKT   &kp GRAVE
+&kp MINUS  &kp DQT   &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH       &sk LCTRL  &sk LALT  &sk LGUI   &sk LSHFT
+&kp PLUS   &kp SQT   &kp AT     &kp PIPE   &kp PRCNT    &kp BACKSLASH  &kp ENTER  &kp AMPS  &kp QMARK  &kp EXCL
+                                &trans     &trans       &trans         &trans
             >;
         };
 
@@ -73,7 +73,7 @@
             bindings = <
 &trans     &trans    &trans    &trans     &trans    &trans         &kp N7  &kp N8  &kp N9  &kp DEL
 &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL  &trans    &trans         &kp N4  &kp N5  &kp N6  &kp N0
-&trans     &trans    &trans    &trans     &trans    &kp BACKSPACE  &kp N1  &kp N2  &kp N3  &trans
+&trans     &trans    &trans    &kp ESC    &trans    &kp BACKSPACE  &kp N1  &kp N2  &kp N3  &trans
                                &trans     &trans    &kp TAB        &trans
             >;
         };
