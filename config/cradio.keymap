@@ -42,6 +42,11 @@
             bindings = <&kp ESC>;
             key-positions = <10 19>;
         };
+
+        ENTER_COMBO {
+            bindings = <&kp ENTER>;
+            key-positions = <13 16>;
+        };
     };
 
     keymap {
