@@ -53,9 +53,9 @@
 
         SYM {
             bindings = <
-&kp ASTRK  &kp LBKT  &kp LBRC   &kp LPAR   &kp TILDE    &kp CARET      &kp RPAR   &kp RBRC  &kp RBKT   &kp GRAVE
-&kp MINUS  &kp DQT   &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH       &sk LCTRL  &sk LALT  &sk LGUI   &sk LSHFT
-&kp PLUS   &kp SQT   &kp AT     &kp PIPE   &kp PRCNT    &kp BACKSLASH  &kp ENTER  &kp AMPS  &kp QMARK  &kp EXCL
+&kp ASTRK  &kp LBKT  &kp LBRC   &kp LPAR   &kp TILDE    &kp CARET      &kp RPAR   &kp RBRC    &kp RBKT   &kp GRAVE
+&kp MINUS  &kp DQT   &kp EQUAL  &kp UNDER  &kp DLLR     &kp HASH       &sk LCTRL  &sk LSHIFT  &sk LGUI   &sk LALT
+&kp PLUS   &kp SQT   &kp AT     &kp PIPE   &kp PRCNT    &kp BACKSLASH  &kp ENTER  &kp AMPS    &kp QMARK  &kp EXCL
                                 &trans     &trans       &trans         &trans
             >;
         };
@@ -63,7 +63,7 @@
         NAV {
             bindings = <
 &kp LG(F)  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
-&kp LSHFT  &kp LGUI    &kp LALT    &kp LCTRL   &none         &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&kp LALT   &kp LGUI    &kp LSHIFT  &kp LCTRL   &none         &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
 &trans     &trans      &trans      &trans      &none         &trans    &none      &none      &trans     &trans
                                    &trans      &trans        &kp TAB   &trans
             >;
@@ -71,19 +71,19 @@
 
         NUM {
             bindings = <
-&trans     &trans    &trans    &trans     &trans    &trans         &kp N7  &kp N8  &kp N9  &kp DEL
-&sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL  &trans    &trans         &kp N4  &kp N5  &kp N6  &kp N0
-&trans     &trans    &trans    &kp ESC    &trans    &kp BACKSPACE  &kp N1  &kp N2  &kp N3  &trans
-                               &trans     &trans    &kp TAB        &trans
+&trans    &trans    &trans      &trans     &trans    &trans         &kp N7  &kp N8  &kp N9  &kp DEL
+&sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &trans    &trans         &kp N4  &kp N5  &kp N6  &kp N0
+&trans    &trans    &trans      &kp ESC    &trans    &kp BACKSPACE  &kp N1  &kp N2  &kp N3  &trans
+                                &trans     &trans    &kp TAB        &trans
             >;
         };
 
         FUNC {
             bindings = <
-&trans     &trans    &trans    &trans     &trans    &kp F10  &kp F7  &kp F8  &kp F9  &trans
-&kp LSHFT  &kp LGUI  &kp LALT  &kp LCTRL  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &trans
-&trans     &trans    &trans    &trans     &trans    &kp F12  &kp F1  &kp F2  &kp F3  &trans
-                               &trans     &trans    &trans   &trans
+&trans    &trans    &trans      &trans     &trans    &kp F10  &kp F7  &kp F8  &kp F9  &trans
+&kp LALT  &kp LGUI  &kp LSHIFT  &kp LCTRL  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &trans
+&trans    &trans    &trans      &trans     &trans    &kp F12  &kp F1  &kp F2  &kp F3  &trans
+                                &trans     &trans    &trans   &trans
             >;
         };
     };
