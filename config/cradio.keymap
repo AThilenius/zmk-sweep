@@ -61,7 +61,7 @@
 
         BT_CTL_COMBO {
             bindings = <&mo 5>;
-            key-positions = <30 31 32 33 29 20>;
+            key-positions = <30 19 10 33>;
         };
     };
 
