@@ -31,7 +31,7 @@
 
         FUNC_COMBO {
             bindings = <&mo 4>;
-            key-positions = <33 14>;
+            key-positions = <30 31>;
         };
 
         NUM_ALT_COMBO {
@@ -57,6 +57,11 @@
         ENTER_LEFT_COMBO {
             bindings = <&kp ENTER>;
             key-positions = <14 13 12>;
+        };
+
+        KB_CTRL_COMBO {
+            bindings = <&mo 5>;
+            key-positions = <10 30 19 33>;
         };
     };
 
