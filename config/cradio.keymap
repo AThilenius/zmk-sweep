@@ -24,19 +24,9 @@
     combos {
         compatible = "zmk,combos";
 
-        NAV_COMBO {
-            bindings = <&mo 2>;
-            key-positions = <30 33>;
-        };
-
         FUNC_COMBO {
             bindings = <&mo 4>;
             key-positions = <30 31>;
-        };
-
-        NUM_ALT_COMBO {
-            bindings = <&mo 2>;
-            key-positions = <32 33>;
         };
 
         ESC_COMBO {
@@ -82,25 +72,25 @@
 &kp GRAVE  &kp LBKT   &kp LBRC  &kp LPAR  &kp TILDE    &kp CARET      &kp RPAR   &kp RBRC    &kp RBKT   &kp STAR
 &kp MINUS  &kp EQUAL  &kp DQT   &kp SQT   &kp UNDER    &kp HASH       &sk LCTRL  &sk LSHIFT  &sk LGUI   &sk LALT
 &kp PLUS   &kp DLLR   &kp AT    &kp PIPE  &kp PRCNT    &kp BACKSLASH  &kp AMPS   &trans      &kp QMARK  &kp EXCL
-                                &trans    &trans       &trans         &trans
+                                &mo 2     &trans       &trans         &trans
             >;
         };
 
         NAV {
             bindings = <
-&kp LG(F)  &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
-&kp LALT   &kp LGUI    &kp LSHIFT  &kp LCTRL   &none         &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
-&trans     &trans      &trans      &trans      &none         &trans    &none      &none      &trans     &trans
-                                   &trans      &trans        &kp TAB   &trans
+&trans    &trans    &trans      &trans     &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
+&kp LALT  &kp LGUI  &kp LSHIFT  &kp LCTRL  &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&trans    &trans    &trans      &trans     &none     &trans    &none      &none      &trans     &trans
+                                &trans     &trans    &kp TAB   &trans
             >;
         };
 
         NUM {
             bindings = <
-&kp ESC   &kp LG(H)  &kp LG(L)   &kp LG(N1)  &kp LG(N2)    &trans     &kp N7  &kp N8  &kp N9  &kp DEL
-&sk LALT  &sk LGUI   &sk LSHIFT  &sk LCTRL   &kp LG(N3)    &kp ENTER  &kp N4  &kp N5  &kp N6  &kp BACKSPACE
-&trans    &trans     &trans      &kp LG(N5)  &kp LG(N4)    &kp N0     &kp N1  &kp N2  &kp N3  &trans
-                                 &trans      &trans        &kp TAB    &trans
+&kp ESC   &trans    &trans      &trans     &trans    &trans     &kp N7  &kp N8  &kp N9  &kp DEL
+&sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &trans    &kp ENTER  &kp N4  &kp N5  &kp N6  &kp BACKSPACE
+&trans    &trans    &trans      &trans     &trans    &kp N0     &kp N1  &kp N2  &kp N3  &trans
+                                &trans     &trans    &kp TAB    &mo 2
             >;
         };
 
