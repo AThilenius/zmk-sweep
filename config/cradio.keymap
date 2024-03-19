@@ -60,10 +60,10 @@
 
         QWERTY {
             bindings = <
-&kp Q     &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I  &kp O      &kp P
-&kp A     &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K  &kp L      &kp SEMICOLON
-&kp FSLH  &kp Z  &kp X  &kp C  &kp V       &kp B      &kp N  &kp M  &kp COMMA  &kp DOT
-                        &mo 1  &shft_cq    &kp SPACE  &mo 2
+&kp Q      &kp W  &kp E  &kp R  &kp T       &kp Y      &kp U  &kp I  &kp O      &kp P
+&kp A      &kp S  &kp D  &kp F  &kp G       &kp H      &kp J  &kp K  &kp L      &kp SEMICOLON
+&kp LMETA  &kp Z  &kp X  &kp C  &kp V       &kp B      &kp N  &kp M  &kp COMMA  &kp DOT
+                         &mo 1  &shft_cq    &kp SPACE  &mo 2
             >;
         };
 
@@ -80,7 +80,7 @@
             bindings = <
 &kp GRAVE  &kp LBKT   &kp LBRC  &kp LPAR  &kp TILDE    &kp CARET      &kp RPAR   &kp RBRC    &kp RBKT   &kp STAR
 &kp MINUS  &kp EQUAL  &kp DQT   &kp SQT   &kp UNDER    &kp HASH       &sk LCTRL  &sk LSHIFT  &sk LGUI   &sk LALT
-&kp PLUS   &kp DLLR   &kp AT    &kp PIPE  &kp PRCNT    &kp BACKSLASH  &kp AMPS   &trans      &kp QMARK  &kp EXCL
+&kp PLUS   &kp DLLR   &kp AT    &kp PIPE  &kp PRCNT    &kp BACKSLASH  &kp AMPS   &kp SLASH   &kp QMARK  &kp EXCL
                                 &mo 3     &trans       &trans         &trans
             >;
         };
